@@ -1,0 +1,43 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.label {
+    width: 100%;
+}
+
+.fechas {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.fechas .field {
+    flex: 1;
+    min-width: 0;
+}
+
+.fechas input[type="date"] {
+    width: 100%;
+}
+
+.submitButton {
+    width: 100%;
+}
+
+@media screen and (max-width: 992px) {
+    .fechas {
+        flex-direction: column;
+    }
+}

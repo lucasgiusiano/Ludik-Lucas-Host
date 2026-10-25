@@ -1,0 +1,81 @@
+.menuWrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+
+}
+
+.menuButton {
+    padding: 3px 10px;
+    height: 100%;
+}
+
+
+.menuList {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    top: 100%;
+    /* justo debajo del botón */
+    right: 0;
+    background-color: var(--secundario);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(108, 107, 107, 0.3);
+    margin-top: 6px;
+    max-height: 240px;
+    overflow-y: auto;
+    z-index: 1000;
+    padding: 8px;
+}
+
+
+.menuItem {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.amountInput {
+    width: 40px;
+    padding: 4px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.medalName {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-grow: 1;
+    font-size: small;
+    color: var(--blanco-secundario);
+}
+
+.confirmButton {
+    background-color: var(--terciario);
+    color: white;
+    border: none;
+    padding: 4px 8px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.emptyText {
+    font-style: italic;
+    color: #ccc;
+}
+
+.medalCount {
+    font-weight: bold;
+    color: #ccc;
+    margin-left: 6px;
+}
+
+@media screen and (max-width: 992px) {
+    .menuButton {
+        font-size: small;
+    }
+}

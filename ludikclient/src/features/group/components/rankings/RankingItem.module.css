@@ -1,0 +1,135 @@
+.rankingCard {
+    position: relative;
+    background-color: var(--principal);
+    padding: 10px 0px;
+    border-radius: 1rem;
+    padding-bottom: 15px;
+}
+
+.rankingCard h3 {
+    margin: 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--secundario);
+}
+
+.medalCard {
+    padding-bottom: 10px;
+}
+
+.medalla {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.participantes {
+    list-style: none;
+}
+
+.participante {
+    display: flex;
+    justify-content: space-between;
+    color: var(--blanco-secundario);
+    font-size: small;
+
+}
+
+.participantes li {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--secundario);
+}
+
+.destacado {
+    position: relative;
+    background-color: var(--secundario);
+    z-index: 0;
+    overflow: hidden;
+    /* para que no se salga el pseudo */
+}
+
+.destacado::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    background: repeating-linear-gradient(30deg,
+            rgba(192, 192, 192, 0.16),
+            rgba(192, 192, 192, 0.3) 2px,
+            rgba(176, 176, 176, 0.2) 20%,
+            rgba(176, 176, 176, 0.2) 30%);
+    filter: blur(3px);
+    z-index: -1;
+
+    animation: reflejo-movil 10s linear infinite alternate;
+    /* tamaño para el patrón que se repite */
+}
+
+@keyframes reflejo-movil {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: 100px 0;
+    }
+}
+
+.posicion {
+    font-weight: bold;
+}
+
+.accionesRanking {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 0 10px;
+    margin-top: 10px;
+}
+
+.accionesRanking button {
+    flex-grow: 1;
+    border-radius: 15px;
+    border: none;
+    padding: 7px 0;
+
+}
+
+.oro {
+    color: var(--color-oro);
+}
+
+.plata {
+    color: var(--color-plata);
+}
+
+.bronce {
+    color: var(--color-bronce);
+}
+
+.primero {
+    font-size: 1.35em;
+}
+
+.segundo {
+    font-size: 1.15em;
+}
+
+.tercero {
+    font-size: 1.05em;
+}
+
+.verMasRanking {
+    position: absolute;
+    border: none;
+    cursor: pointer;
+    background: transparent;
+    padding: 20px;
+    top: -5px;
+    right: 0px;
+    color: var(--terciario);
+}

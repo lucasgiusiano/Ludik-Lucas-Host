@@ -1,0 +1,63 @@
+.itemCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  background: var(--secundario);
+  border-radius: 15px;
+}
+
+.itemTitle {
+  margin: 0;
+  margin-bottom: 10px;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.itemInfo {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.itemInfo p {
+  margin: 10px 0;
+}
+
+.itemInfo p svg {
+  margin-right: 10px;
+}
+
+.itemInfo p:nth-last-of-type(2) svg {
+  color: green;
+  border-top: 2px solid;
+
+}
+
+.itemInfo p:last-of-type svg {
+  color: red;
+  border-bottom: 2px solid;
+
+}
+
+.editBtn {
+  position: absolute;
+  right: 10px;
+  top: 35px;
+  padding: 5px;
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+  color: var(--blanco-principal);
+  font-size: 2.5vh;
+}
+
+@media (max-width: 480px) {
+  .itemTitle {
+    font-size: 0.9rem;
+  }
+}

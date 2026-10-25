@@ -1,0 +1,67 @@
+/* ProfilePage.module.css */
+
+.gestionDePerfil {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    width: 100%;
+    margin: 0 auto;
+    font-family: 'Helvetica', sans-serif;
+}
+
+.userInfo,
+.userBoxContent {
+    display: flex;
+    flex-direction: column;
+}
+
+.userInfo {
+    gap: 1rem;
+    width: 100%;
+}
+
+.userBox {
+    position: relative;
+    /* nuevo */
+    background-color: var(--secundario);
+    border-radius: 15px;
+    padding: 1.5rem 1rem 0.75rem;
+    /* más padding top para dejar espacio al label */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.userLabel {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    font-size: 0.625rem;
+    color: var(--blanco-secundario);
+    /* para que no se mezcle con el fondo */
+    padding: 0 0.25rem;
+    border-radius: 4px;
+    pointer-events: none;
+}
+
+
+.userText {
+    font-size: 1.25rem;
+    color: #d9d9d9;
+    margin: 0;
+}
+
+.editIcon {
+    position: absolute;
+    right: 15px;
+    transform: translateY(-7px);
+    color: var(--blanco-principal);
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.editIcon:hover {
+    color: var(--blanco-secundario);
+}

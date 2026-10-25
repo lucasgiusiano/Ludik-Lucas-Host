@@ -1,0 +1,19 @@
+.pacContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.newPacButton {
+    width: 100%;
+    min-height: 200px;
+}
+
+.pacsList {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}

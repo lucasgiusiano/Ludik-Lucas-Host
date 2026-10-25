@@ -1,0 +1,150 @@
+.modalBackdrop {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal {
+    background-color: #131f24;
+    border-radius: 15px;
+    padding: 24px;
+    width: 70%;
+    max-width: 400px;
+    color: var(--blanco-principal);
+    font-family: sans-serif;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.modalHeader h2 {
+    margin: 0;
+}
+
+.modalHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.closeButton {
+    background: none;
+    border: none;
+    color: #d9d9d9;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.modalForm {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.modalForm label {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+}
+
+/*input,
+select {
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    background-color: var(--blanco-secundario);
+    color: black;
+    font-size: 14px;
+    margin-top: 5px;
+}*/
+
+.selectWrapper {
+    position: relative;
+}
+
+.selectWrapper select {
+    width: 100%;
+    padding-right: 30px;
+}
+
+.btnSubmit {
+    height: 40px;
+    flex-grow: 1;
+}
+
+.botones {
+    width: 100%;
+    display: flex;
+    gap: 10px
+}
+
+.asignacionMutua {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 15px;
+    color: white;
+    margin: 0.5rem 0;
+}
+
+/* --- Estilos nuevos para el selector de íconos --- */
+
+.iconButtonContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.iconSelectButton {
+    margin-top: 5px;
+    width: 100%;
+    height: 40px;
+    /* Match con btnSubmit height */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.iconGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
+    gap: 10px;
+    margin-top: 15px;
+    max-height: 120px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -ms-overflow-style: none;
+    padding: 10px;
+    border: 1px solid var(--secundario);
+    border-radius: 15px;
+}
+
+.iconGrid::-webkit-scrollbar {
+    display: none;
+}
+
+.iconOption {
+    background-color: var(--secundario);
+    color: var(--blanco-principal);
+    border: 2px solid transparent;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: border 0.3s, background-color 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.iconOption:hover {
+    background-color: var(--principal);
+    border: 1px solid var(--secundario);
+}
+
+.iconSelected {
+    background-color: var(--principal);
+    border: 1px solid var(--secundario);
+}

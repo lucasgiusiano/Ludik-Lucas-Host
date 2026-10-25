@@ -1,0 +1,184 @@
+.itemsContainer {
+    /* Espacio entre elementos (opcional) */
+    padding: 10px;
+    border-radius: 15px;
+    background-color: var(--secundario);
+    margin-top: 10px;
+}
+
+.studentsContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    justify-content: space-between;
+}
+
+.noStudentsMessage {
+    padding: 15px;
+    text-align: center;
+}
+
+.noStudentsMessage strong {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.infoGrupo {
+    display: flex;
+}
+
+.infoGrupo h3 {
+    margin: 0;
+}
+
+.infoGrupo h3 svg {
+    margin-right: 15px;
+}
+
+.acciones {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 3px;
+    background-color: var(--secundario);
+    color: white;
+    border-radius: 15px;
+    height: 100%;
+    padding: 5px;
+    min-width: 200px;
+    width: 100%;
+    box-sizing: border-box;
+
+}
+
+.resumen {
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+    margin-bottom: 10px;
+    border: 1px solid var(--terciario);
+    border-radius: 15px;
+    padding: 10px 0;
+}
+
+.resumen div {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    border-radius: 15px;
+    flex-grow: 1;
+}
+
+.resumen div:nth-child(1) p:first-of-type {
+    color: var(--monedas);
+}
+
+.resumen div:nth-child(1) p:first-of-type div {
+    color: var(--monedas);
+}
+
+.resumen p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+}
+
+.resumen p div {
+    width: fit-content;
+}
+
+.acciones label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    gap: 5px;
+    min-width: 40px;
+    font-size: 90%;
+    background-color: transparent;
+    border: none;
+    color: var(--terciario);
+    padding: 0 10px;
+    border-radius: 15px;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.acciones label:hover {
+    background-color: var(--principal);
+}
+
+.acciones input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+}
+
+.activeLabel {
+    background-color: var(--principal) !important;
+}
+
+.acciones button svg {
+    padding: 0;
+}
+
+/* Colores personalizados por ítem seleccionado */
+.activePerfil svg, .activePerfil span {
+    color: #168c1e;
+}
+
+.activeAlumnos svg, .activeAlumnos span {
+    color: #167a8c;
+}
+
+.activeTienda svg, .activeTienda span {
+    color: #c41e3a;
+    /* o el que desees */
+}
+
+.activeRankings svg, .activeRankings span {
+    color: #f0a500;
+}
+
+.activePac svg, .activePac span {
+    color: #8c1683;
+}
+
+.activeSolicitudes svg, .activeSolicitudes span {
+    color: #c41e3a;
+}
+
+.activeConfigs svg, .activeConfigs span {
+    color: #7d7d7d;
+}
+
+@media screen and (max-width: 992px) {
+
+    .infoGrupo {
+        flex-direction: column;
+        align-items: center;
+        font-size: small;
+    }
+
+    .acciones {
+        box-shadow: 0 3px 15px rgba(0, 0, 0, 0.307);
+    }
+
+    .acciones label>span {
+        display: none;
+    }
+
+    .acciones label {
+        gap: 2px;
+        padding: 0;
+    }
+}
+
+@media screen and (max-width: 1520px) {
+    .studentsContainer {
+        grid-template-columns: 1fr;
+    }
+}

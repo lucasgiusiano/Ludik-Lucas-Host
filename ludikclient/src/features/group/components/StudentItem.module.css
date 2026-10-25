@@ -1,0 +1,153 @@
+/* StudentItem.module.css */
+.card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    background: var(--principal);
+    border-radius: 15px;
+    padding: 5px 15px;
+    color: var(--blanco-principal);
+    text-align: center;
+}
+
+.card .avatar {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid var(--secundario);
+}
+
+.card h4 {
+    margin-bottom: 10px;
+}
+
+p {
+    color: var(--blanco-principal);
+}
+
+
+.centrales {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-grow: 1;
+    gap: 10px;
+}
+
+
+.actionsContainer {
+    display: flex;
+    justify-content: end;
+    gap: 10px;
+    flex-grow: 1;
+
+}
+
+.actionsContainer>div {
+    border: 1px solid var(--secundario);
+
+}
+
+.menuSection {
+    flex-grow: 1;
+}
+
+.notaAlumno {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 15px;
+    padding: 10px;
+    min-width: 120px;
+}
+
+.notaAlumno p {
+    padding-bottom: 5px;
+    width: 100%;
+    font-size: smaller;
+    border-bottom: 1px solid var(--secundario);
+}
+
+.notaAlumno span {
+    font-weight: bold;
+}
+
+.asignarMedalla {
+    display: flex;
+    gap: 10px;
+    border-radius: 15px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.medallas {
+    margin: 0;
+    width: 100%;
+    padding: 0px 5px;
+    text-align: center;
+    border-radius: 7px;
+    font-size: small;
+}
+
+.medallas option {
+    background-color: var(--secundario);
+}
+
+.showProfileButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    border: none;
+    background: transparent;
+    color: var(--blanco-principal);
+    cursor: pointer;
+}
+
+@media screen and (max-width: 992px) {
+    .card {
+        gap: 10px;
+        padding: 5px 10px;
+    }
+
+    .card svg {
+        font-size: small;
+    }
+
+    .nombreEstudiante {
+        text-align: start;
+        font-size: small;
+        width: 7ch;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .asignarMedalla {
+        flex-grow: 1;
+        flex-direction: column;
+
+    }
+
+    .actionsContainer {
+        flex-grow: 1;
+    }
+
+    .medallas {
+        font-size: small;
+    }
+
+    .asignarMedalla p {
+        font-size: xx-small;
+    }
+
+    .notaAlumno {
+        min-width: 50px;
+    }
+
+}

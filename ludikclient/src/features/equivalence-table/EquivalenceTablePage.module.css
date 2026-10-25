@@ -1,0 +1,12 @@
+.tablesContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+@media screen and (max-width: 992px) {
+    .tablesContainer {
+        grid-template-columns: repeat(1, 1fr);
+
+    }
+}

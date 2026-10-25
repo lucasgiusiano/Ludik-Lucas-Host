@@ -1,0 +1,13 @@
+.modalForm {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.selectWrapper {
+  position: relative;
+}
+
+.btnSubmit {
+  height: 40px;
+}

@@ -1,0 +1,66 @@
+.modalForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.btnSubmit {
+    flex-grow: 1;
+}
+
+.acciones {
+    margin-top: 15px;
+    display: flex;
+    width: 100%;
+    gap: 15px;
+}
+
+.iconButtonContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.iconSelectButton {
+    margin-top: 5px;
+    width: 100%;
+}
+
+.iconGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
+    gap: 10px;
+    margin-top: 15px;
+    max-height: 120px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -ms-overflow-style: none;
+    padding: 10px;
+    border: 1px solid var(--secundario);
+    border-radius: 15px;
+}
+
+.iconGrid::-webkit-scrollbar {
+    display: none;
+}
+
+.iconOption {
+    background-color: var(--secundario);
+    color: var(--blanco-principal);
+    border: 2px solid transparent;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: border 0.3s, background-color 0.3s;
+}
+
+.iconOption:hover {
+    background-color: var(--principal);
+    border: 1px solid var(--secundario);
+}
+
+.iconSelected {
+    background-color: var(--principal);
+    border: 1px solid var(--secundario);
+}
+
+@media screen and (max-width: 992px) {}

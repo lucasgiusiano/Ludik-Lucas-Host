@@ -1,0 +1,106 @@
+.extendedView {
+    background-color: var(--principal);
+    border-radius: 1.5rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.extendedView h2 {
+    margin: 0;
+    font-size: 1.8rem;
+    color: var(--blanco);
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--secundario);
+}
+
+.extendedView p {
+    font-size: 1rem;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    color: var(--blanco);
+}
+
+.extendedView strong {
+    color: var(--terciario);
+}
+
+.participantes {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.participantes li {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--secundario);
+    color: var(--blanco);
+}
+
+.posicion {
+    font-weight: bold;
+    color: var(--secundario);
+}
+
+.oro {
+    color: var(--color-oro);
+}
+
+.plata {
+    color: var(--color-plata);
+}
+
+.bronce {
+    color: var(--color-bronce);
+}
+
+.primero {
+    font-size: 1.35em;
+}
+
+.segundo {
+    font-size: 1.15em;
+}
+
+.tercero {
+    font-size: 1.05em;
+}
+
+.destacado {
+    position: relative;
+    background-color: var(--secundario);
+    z-index: 0;
+    overflow: hidden;
+    /* para que no se salga el pseudo */
+}
+
+.destacado::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    background: repeating-linear-gradient(30deg,
+            rgba(192, 192, 192, 0.16),
+            rgba(192, 192, 192, 0.3) 2px,
+            rgba(176, 176, 176, 0.2) 20%,
+            rgba(176, 176, 176, 0.2) 30%);
+    filter: blur(3px);
+    z-index: -1;
+
+    animation: reflejo-movil 10s linear infinite alternate;
+    /* tamaño para el patrón que se repite */
+}
+
+@keyframes reflejo-movil {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: 100px 0;
+    }
+}

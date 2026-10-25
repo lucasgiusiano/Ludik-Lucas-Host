@@ -1,0 +1,21 @@
+.container {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    gap: 10px;
+    box-sizing: border-box;
+}
+
+.agregarRanking {
+    min-height: 220px;
+}
+
+.loaderContainer {
+    text-align: center;
+    padding: 2rem;
+}
+
+.sinRankings {
+    text-align: center;
+}

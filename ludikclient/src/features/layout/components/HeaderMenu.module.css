@@ -1,0 +1,146 @@
+.menuButton {
+  background-color: var(--secundario);
+  color: var(--blanco-principal);
+  border: none;
+  border-radius: 50%;
+  padding: 10px 15px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.1s ease;
+}
+
+.menuButton:active {
+  background-color: var(--principal);
+}
+
+/* Fondo semitransparente */
+.overlay {
+  opacity: 0;
+  transition: opacity .3s ease;
+  /* transición suave de 0.5s */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 998;
+  pointer-events: none;
+}
+
+.overlay.show {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* Sidebar */
+.sidebarMenu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 96vh;
+  width: 250px;
+  background-color: var(--principal);
+  box-shadow: 2px 0 6px rgba(0, 0, 0, 0.15);
+  padding: 20px 15px;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  z-index: 999;
+  box-sizing: content-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebarMenu.show {
+  transform: translateX(0);
+}
+
+.sidebarMenu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebarMenu li {
+  padding: 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  margin-bottom: 5px;
+  transition: .5s;
+}
+
+.sidebarMenu li:hover {
+  background-color: var(--secundario);
+}
+
+.sidebarMenu svg {
+  margin-right: 10px;
+  width: 25px;
+}
+
+/* Activos por ruta */
+.activeProfile {
+  background-color: var(--secundario);
+  box-shadow: 0 0 1px 1px var(--terciario);
+}
+
+.activeProfile svg {
+  color: #168c1e;
+}
+
+.activeGroups {
+  background-color: var(--secundario);
+  box-shadow: 0 0 1px 1px var(--terciario);
+}
+
+.activeGroups svg {
+  color: #167a8c;
+}
+
+.activeMedallas {
+  background-color: var(--secundario);
+  box-shadow: 0 0 1px 1px var(--terciario);
+}
+
+.activeMedallas svg {
+  color: var(--medallas);
+}
+
+.activeRubricas {
+  background-color: var(--secundario);
+  box-shadow: 0 0 1px 1px var(--terciario);
+}
+
+.activeRubricas svg {
+  color: #358c16;
+}
+
+.activeConfiguraciones {
+  background-color: var(--secundario);
+  box-shadow: 0 0 1px 1px var(--terciario);
+}
+
+.activeConfiguraciones svg {
+  color: #7d7d7d;
+}
+
+.activeRecompensas {
+  background-color: var(--secundario);
+  box-shadow: 0 0 1px 1px var(--terciario);
+}
+
+.activeRecompensas svg {
+  color: #c41e3a;
+}
+
+.cerrarSesion {
+
+  margin-top: auto;
+  /* NUEVO → empuja este bloque al final del menú */
+  padding: 0 15px;
+}

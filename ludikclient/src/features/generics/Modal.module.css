@@ -1,0 +1,69 @@
+.modalBackdrop {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    overflow-y: scroll;
+}
+
+.modal {
+    background-color: #131f24;
+    border-radius: 15px;
+    padding: 24px;
+    width: 70%;
+    max-width: 600px;
+    color: var(--blanco-principal);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    max-height: 90vh;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+.modalHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 15px;
+    height: 35px;
+}
+
+.modalHeader h2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0;
+    font-weight: none;
+    font-size: medium;
+}
+
+.closeButton {
+    background: none;
+    border: none;
+    color: var(--blanco-principal);
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 10px;
+    transform: translateX(5px);
+}
+
+.modal hr {
+    margin: 0 auto;
+    width: 95%;
+    border: 1px solid var(--terciario);
+}
+
+.modalContent {
+    margin-top: 15px;
+}
+
+@media screen and (max-width: 992px) {
+    .modal {
+        width: 90%;
+    }
+}

@@ -1,0 +1,14 @@
+.formThreshold {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.accionesThreshold {
+    display: flex;
+    gap: 10px;
+}
+
+.accionesThreshold button {
+    flex-grow: 1;
+}

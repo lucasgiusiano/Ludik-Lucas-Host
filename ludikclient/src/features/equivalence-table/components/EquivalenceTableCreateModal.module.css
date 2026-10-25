@@ -1,0 +1,166 @@
+.modalForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: var(--blanco-principal);
+    width: 100%;
+}
+
+.nombreTabla {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.equivalencias {
+    overflow-x: hidden;
+    margin-bottom: 20px;
+    max-height: 550px;
+}
+
+.equivalencia {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 10px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    border: 1px solid var(--secundario);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.eliminarEquivalencia {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: var(--rojo-principal, red);
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.nota {
+    max-width: 80px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.nota label {
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+}
+
+.medallasNecesarias {
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+    flex-grow: 1;
+    max-width: calc(100% - 115px);
+    overflow-x: auto;
+}
+
+.medallasNecesarias label {
+    font-size: 0.9rem;
+}
+
+.medallasSeleccionadas {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(4, 1fr);
+    overflow-x: hidden;
+    gap: 10px;
+    min-height: 150px;
+}
+
+.medalla {
+    position: relative;
+    display: flex;
+    gap: 5px;
+    background: var(--secundario);
+    padding: 5px;
+    border-radius: 10px;
+    flex-direction: column;
+    align-items: center;
+    height: fit-content;
+}
+
+.medalla h4 {
+    padding: 0 5px;
+    margin: 0;
+    font-size: small;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-height: fit-content;
+}
+
+.eliminarMedalla {
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 5px 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    color: var(--blanco-principal);
+    font-size: 1.2rem;
+    z-index: 100;
+
+}
+
+.medallaImagenWrapper {
+    position: relative;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.medallaImagenWrapper svg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    aspect-ratio: 1 / 1;
+}
+
+
+.medallaCantidad {
+    position: absolute;
+    top: 0.4rem;
+    right: 0.4rem;
+
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+
+    background-color: var(--terciario);
+    color: var(--blanco-principal);
+    font-size: 0.9rem;
+    font-weight: bold;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+.acciones {
+    display: flex;
+    gap: 15px;
+}
+
+.acciones button {
+    flex-grow: 1;
+}
+
+@media screen and (max-width: 992px) {
+    .medallasSeleccionadas {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

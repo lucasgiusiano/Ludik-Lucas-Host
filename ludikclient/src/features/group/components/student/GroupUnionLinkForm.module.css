@@ -1,0 +1,64 @@
+.modalFormLink {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+}
+
+.modalFormLink label {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+}
+
+.modalFormLink label input {
+    margin-top: 5px;
+}
+
+.acciones {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.btnSubmit {
+    height: 40px;
+    flex-grow: 1;
+}
+
+.qrWrapper {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+}
+
+.qrOptions {
+    position: absolute;
+    top: 55px;
+    right: -23px;
+    opacity: 0;
+    display: flex;
+    gap: 12px;
+    transform: translateY(-60px) scale(0.1);
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 1100;
+}
+
+.qrOptions.show {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: all;
+}
+
+.qrOptionBtn {
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}

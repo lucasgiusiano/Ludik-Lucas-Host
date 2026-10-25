@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\LogicaNegocio\LogicaNegocio.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="DTOs\AtributoAvatarDTOs\" />
+    <Folder Include="DTOs\ImagenDTOs\" />
+    <Folder Include="DTOs\RestablecerContrasenaDTO\" />
+    <Folder Include="ImplementacionCasosUsos\Avatar\" />
+    <Folder Include="ImplementacionCasosUsos\Imagenes\Estrategias\" />
+    <Folder Include="ImplementacionCasosUsos\Login\" />
+    <Folder Include="ImplementacionCasosUsos\RecuperarContrasena\" />
+    <Folder Include="InterfacesCasosUsos\RecuperarContrasena\" />
+    <Folder Include="InterfacesCasosUsos\ServicioPrecargaArchivos\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="13.0.0" />
+  </ItemGroup>
+
+</Project>

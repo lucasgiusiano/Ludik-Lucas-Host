@@ -1,0 +1,177 @@
+.requestView {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 15px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* SWITCH de selección */
+.switchContainer {
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 400px;
+    height: 44px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--principal);
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 36px;
+    width: 200px;
+    border-radius: 35px;
+    left: 4px;
+    bottom: 4px;
+    background-color: var(--secundario);
+    transition: 0.4s;
+}
+
+input:checked+.slider:before {
+    transform: translateX(193px);
+}
+
+.switchLabel {
+    position: absolute;
+    top: 46%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    transition: 0.4s;
+}
+
+.switchLabel.union {
+    color: var(--terciario);
+}
+
+.switchLabel.medalla {
+    color: var(--blanco-secundario);
+}
+
+input:checked+.slider .switchLabel.union {
+    color: var(--blanco-secundario);
+}
+
+input:checked+.slider .switchLabel.medalla {
+    color: var(--terciario);
+}
+
+/* Transición de formularios */
+.formSlider {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.formInner {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    transition: 0.5s ease-in-out;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 50%;
+    box-sizing: border-box;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    border: 1px solid var(--terciario);
+    border-radius: 15px;
+    padding: 10px;
+}
+
+.formulario.oculto {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.formulario h3 {
+    text-align: center;
+    color: var(--blanco-secundario);
+}
+
+@media screen and (max-width: 992px) {
+    .formInner {
+        width: 200%;
+        gap: 0;
+    }
+
+    .switchContainer {
+        display: flex;
+        margin-bottom: 10px;
+    }
+
+    .formulario {
+        opacity: 1;
+        padding: 0;
+        border: none;
+    }
+
+    .formulario.oculto {
+        opacity: 0;
+        transform: scale(0.9);
+        pointer-events: none;
+    }
+
+    .formulario h3 {
+        display: none;
+    }
+
+    .slider:before {
+        width: 170px;
+
+    }
+
+    .switch {
+        width: 340px;
+    }
+
+    .switchLabel.union {
+        right: 23px;
+        font-size: 13px;
+    }
+
+    .switchLabel.medalla {
+        left: 20px;
+        font-size: 13px;
+    }
+
+    input:checked+.slider:before {
+        transform: translateX(163px);
+    }
+
+}
+
+@media screen and (min-width: 992px) {
+    .formInner {
+        transform: translateX(0) !important;
+    }
+}

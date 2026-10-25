@@ -1,0 +1,35 @@
+.rewardsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 10px;
+    width: 100%;
+}
+
+.rewardsGrid>* {
+    justify-self: center;
+    width: 100%;
+}
+
+.rewardActions {
+    display: flex;
+    gap: 15px;
+}
+
+.rewardActions button {
+    min-width: auto;
+
+}
+
+.clamped {
+    font-size: small;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.botonAsignar {
+    padding: 10px 20px;
+}

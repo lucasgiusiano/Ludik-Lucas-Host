@@ -1,0 +1,9 @@
+.medalRequests {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.medalRequests p {
+    text-align: center;
+}

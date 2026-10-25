@@ -1,0 +1,434 @@
+/* StudentAvatarEditor.module.css (actualizado: sliders y layout de controles corregidos) */
+
+.editorContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0.5rem;
+}
+
+/* AVATAR PREVIEW WRAP */
+.avatarPreviewWrap {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.avatarPreview {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    border: 2px dashed var(--terciario);
+    border-radius: 12px;
+    min-height: 220px;
+    width: 100%;
+    max-width: 420px;
+    aspect-ratio: 1/1;
+    color: var(--terciario);
+    background: var(--blanco-principal);
+    box-shadow: 0 4px 12px rgba(16, 24, 32, 0.04);
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.loaderWrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.avatarSvgWrap,
+.avatarPreviewImg {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.avatarText {
+    color: var(--terciario);
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+/* CONFIRM BUTTON */
+.confirmButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 8px;
+    background: var(--boton-principal);
+    color: var(--blanco-principal);
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 6px 14px rgba(15, 45, 64, 0.12);
+}
+
+.confirmButton[disabled] {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.confirmButton svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* TABS */
+.tabs {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    padding-bottom: 0.5rem;
+    margin-top: 0.25rem;
+}
+
+.tabLabel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    background: transparent;
+    color: var(--terciario);
+    user-select: none;
+    padding: 6px;
+    border-radius: 8px;
+    text-align: center;
+    min-width: 56px;
+}
+
+.tabLabel:hover {
+    color: var(--boton-principal);
+}
+
+.tabRadio {
+    display: none;
+}
+
+.tabButton {
+    font-size: 1.25rem;
+    margin-bottom: 0.2rem;
+    color: var(--terciario);
+    transition: color 0.18s ease;
+    padding: 6px;
+    width: 36px;
+    height: 36px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+}
+
+.tabActive {
+    color: var(--blanco-principal);
+    background: var(--boton-principal);
+    box-shadow: 0 6px 12px rgba(12, 40, 80, 0.08);
+}
+
+.tabText {
+    font-size: 0.75rem;
+    color: var(--secundario);
+}
+
+/* TAB PANEL */
+.tabPanel {
+    padding: 0.75rem;
+    border-radius: 10px;
+    background-color: var(--blanco-principal);
+    box-shadow: inset 0 0 3px rgba(55, 86, 98, 0.03);
+    overflow: visible;
+}
+
+/* OPTION ITEMS (posicion) */
+.tabContent {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+/* optionRow: label + control (prevents overflow) */
+.optionRow {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    width: 100%;
+    flex-wrap: nowrap;
+    min-width: 0;
+    /* important to prevent children overflow */
+}
+
+.optionLabel {
+    display: inline-flex;
+    gap: 0.75rem;
+    align-items: center;
+    min-width: 110px;
+    /* label column width */
+    white-space: nowrap;
+    font-weight: 600;
+    color: var(--secundario);
+    flex-shrink: 0;
+}
+
+/* controlWrap grows and can shrink, prevents overflow */
+.controlWrap {
+    flex: 1 1 0%;
+    min-width: 0;
+    /* critical so slider can shrink inside flex */
+    display: flex;
+    align-items: center;
+}
+
+/* sliderRow contains slider + value badge */
+.sliderRow {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    width: 100%;
+}
+
+/* slider stretches to available width but respects max-width */
+.slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    height: 6px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--boton-principal) 0%, rgba(0, 0, 0, 0.08) 100%);
+    outline: none;
+}
+
+/* thumb */
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--blanco-principal);
+    border: 2px solid var(--boton-principal);
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+}
+
+.slider::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--blanco-principal);
+    border: 2px solid var(--boton-principal);
+    cursor: pointer;
+}
+
+/* small checkbox style */
+.checkbox {
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    accent-color: var(--boton-principal);
+}
+
+.smallControl {
+    margin-left: 8px;
+}
+
+/* value badge next to slider */
+.valueBadge {
+    min-width: 44px;
+    padding: 4px 8px;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.04);
+    color: var(--principal);
+    font-weight: 700;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+/* GRID FOR ITEMS */
+.tabContentGrid {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.subTitle {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--principal);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* item grid */
+.itemGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(84px, 1fr));
+    gap: 0.6rem;
+    align-items: start;
+}
+
+/* item card */
+.avatarItemCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.45rem;
+    border-radius: 8px;
+    background-color: var(--blanco-secundario);
+    cursor: pointer;
+    transition: transform 0.12s ease, box-shadow 0.12s ease;
+    gap: 6px;
+    min-height: 88px;
+}
+
+.avatarItemCard:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 14px rgba(15, 45, 64, 0.06);
+}
+
+.avatarPreviewImg {
+    width: 100%;
+    aspect-ratio: 1/1;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    display: block;
+}
+
+/* mark selected state using sibling selector */
+.avatarItemCard input[type="radio"]:checked+.avatarNoneOption,
+.avatarItemCard input[type="radio"]:checked+img,
+.avatarItemCard input[type="radio"]:checked+.colorBox {
+    outline: 3px solid rgba(37, 117, 204, 0.14);
+    box-shadow: 0 6px 12px rgba(37, 117, 204, 0.06);
+    border-radius: 8px;
+}
+
+/* hidden input */
+.radioInputHidden {
+    display: none;
+}
+
+/* none option boxes */
+.avatarNoneOption,
+.colorNoneOption {
+    width: 60px;
+    height: 60px;
+    border: 2px dashed var(--terciario);
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--terciario);
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+/* color box uses CSS variable set inline with --color-value */
+.colorBox {
+    width: 44px;
+    height: 44px;
+    border-radius: 6px;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    margin-bottom: 4px;
+    background-color: var(--color-value, transparent);
+    box-shadow: inset 0 -3px 6px rgba(0, 0, 0, 0.02);
+}
+
+/* color label */
+.colorLabel {
+    font-size: 0.75rem;
+    text-align: center;
+    word-break: break-word;
+    color: var(--secundario);
+    margin: 0;
+}
+
+/* color groups */
+.colorGroupList {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.colorGroup {
+    width: 100%;
+}
+
+.colorGroupTitle {
+    margin: 6px 0;
+    font-weight: 700;
+    color: var(--principal);
+    font-size: 0.9rem;
+}
+
+/* info and errors */
+.infoText {
+    color: var(--secundario);
+    font-size: 0.9rem;
+}
+
+.errorText {
+    color: #b00020;
+    font-size: 0.9rem;
+}
+
+/* responsive tweaks */
+@media (min-width: 900px) {
+    .editorContainer {
+        gap: 1.5rem;
+    }
+
+    .tabContent {
+        flex-direction: column;
+        /* keep column to avoid slider overflow inside narrow panels */
+    }
+
+    .avatarPreview {
+        max-width: 320px;
+    }
+
+    .tabPanel {
+        display: flex;
+        gap: 1rem;
+    }
+
+    .tabContentGrid {
+        flex: 1;
+    }
+
+    /* show label and control side-by-side with more room */
+    .optionRow {
+        align-items: center;
+    }
+}
+
+/* extra small screens: stack neatly and ensure slider fits */
+@media (max-width: 420px) {
+    .optionLabel {
+        min-width: 90px;
+        font-size: 0.9rem;
+    }
+
+    .valueBadge {
+        min-width: 40px;
+        padding: 3px 6px;
+        font-size: 0.85rem;
+    }
+}

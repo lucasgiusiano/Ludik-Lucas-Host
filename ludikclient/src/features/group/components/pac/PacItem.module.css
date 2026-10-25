@@ -1,0 +1,112 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: var(--principal);
+    border-radius: 15px;
+    padding: 15px;
+    width: 100%;
+}
+
+.title {
+    border: 1px solid var(--terciario);
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    text-align: center;
+    padding: 10px;
+    padding-top: 3px;
+    border-radius: 15px;
+}
+
+.title strong {
+    font-size: small;
+}
+
+.progressBarContainer p {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.infoProgressBar {
+    display: flex;
+    gap: 5px;
+    font-size: small;
+    justify-content: space-evenly;
+}
+
+.infoProgressBar p {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid var(--terciario);
+    border-radius: 10px;
+    padding: 10px 15px;
+    flex-grow: 1;
+}
+
+.infoProgressBar strong {
+    margin-bottom: 5px;
+}
+
+/* Nueva barra de progreso */
+.progressBarWrapper {
+    width: 100%;
+    height: 35px;
+    background-color: var(--blanco-principal);
+    border-radius: 120px;
+    overflow: hidden;
+    border: 1px solid var(--terciario);
+}
+
+.progressFill {
+    height: 100%;
+    width: 0;
+    /* controlado por React con style.width */
+    border-radius: 120px;
+    /* mantiene curva interna */
+    overflow: hidden;
+
+    /* Color base */
+    background-color: var(--meta-alumno);
+
+    /* Gradiente animado */
+    background-image:
+        linear-gradient(135deg,
+            rgba(255, 255, 255, 0.3) 25%,
+            transparent 25%,
+            transparent 50%,
+            rgba(255, 255, 255, 0.3) 50%,
+            rgba(255, 255, 255, 0.3) 75%,
+            transparent 75%,
+            transparent);
+
+    background-size: 40px 40px, 15%;
+    /* tamaño de la trama y del gif */
+    background-repeat: repeat, repeat-x;
+    background-position: 0 0, center;
+
+    /* Animación de la trama */
+    animation: progressMove 2s linear infinite;
+
+    /* Transición suave al cambiar el ancho */
+    transition: width 0.6s ease-in-out;
+}
+
+/* Mueve el gradiente en diagonal */
+@keyframes progressMove {
+    from {
+        background-position: 0 0, center;
+    }
+
+    to {
+        background-position: 40px 40px, center;
+    }
+}
+
+
+@media screen and (max-width: 992px) {
+    .infoProgressBar {
+        justify-content: space-between;
+    }
+}

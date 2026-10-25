@@ -1,0 +1,282 @@
+/* Animaciones */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Sección principal */
+.heroSection {
+  display: flex;
+  justify-content: center;
+  /* centrar horizontal */
+  align-items: center;
+  /* centrar vertical */
+  text-align: center;
+  flex: 1;
+  padding: 3rem 2rem;
+  background-image: url("../../assets/portada.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  color: white;
+  isolation: isolate;
+  min-height: 40vh;
+  /* si quieres más, usa height: 40vh; */
+}
+
+.heroSection::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+
+.heroSectionContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 350px;
+}
+
+.heroSectionContent img {
+  object-fit: contain;
+  width: 270px;
+}
+
+.heroTitle {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--letras-secundario);
+}
+
+.heroSubtitle {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+
+/* Botones de inicio */
+.menuComenzar {
+  display: flex;
+  background-color: #131f24e4;
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: 0 1px 20px 3px rgba(0, 0, 0, 0.308);
+  width: 50%;
+}
+
+.botonComienzo {
+  width: 250px;
+}
+
+.buttonWhite {
+  background-color: var(--blanco-principal);
+  box-shadow: 0 1px 0 3px var(--blanco-secundario);
+  color: var(--boton-principal);
+}
+
+.buttonWhite:active {
+  box-shadow: 0 0 0 2px var(--blanco-secundario);
+  transform: translateY(3px);
+  outline: none;
+}
+
+/* Developers section */
+.devsSection {
+  width: 100%;
+  background-color: var(--terciario);
+  padding: 3rem 2rem;
+}
+
+.devsSection h2 {
+  margin-bottom: 2rem;
+}
+
+.devsContainer {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.devsGrid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.devCard {
+  background-color: var(--secundario);
+  border-radius: 12px;
+  padding: 1.5rem;
+  width: 220px;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.devCard.visible {
+  animation-name: fadeDown;
+  animation-duration: 0.6s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+}
+
+/* Animación de fade con subida */
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(20px);
+  }
+}
+
+.devCard img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+/* Footer */
+.footer {
+  width: 100%;
+  background-color: var(--principal);
+  color: var(--blanco-principal);
+  padding: 3rem 2rem;
+}
+
+.footerContainer {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.footer form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.footer label {
+  font-weight: bold;
+}
+
+.footer textarea {
+  resize: vertical;
+}
+
+/* Secciones de features individuales */
+.featureSectionAlt {
+  width: 100%;
+  padding: 4rem 2rem;
+  background-color: var(--secundario);
+}
+
+.featureAlt {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  opacity: 0;
+  transform: translateX(100px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.featureAlt.leftSlide {
+  flex-direction: row;
+}
+
+.featureAlt.rightSlide {
+  flex-direction: row-reverse;
+}
+
+.featureAlt.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.featureText {
+  flex: 1;
+  font-size: 1rem;
+  font-family: Arial, sans-serif;
+  color: var(--blanco-principal);
+}
+
+.featureText h2 {
+  margin-bottom: 1rem;
+  color: var(--letras-secundario);
+}
+
+.featureText p {
+  line-height: 1.6;
+}
+
+.featureImage {
+  flex: 1;
+  text-align: center;
+}
+
+.featureImage img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+@media screen and (max-width: 992px) {
+
+  .featureAlt {
+    flex-direction: column !important;
+  }
+
+  .menuComenzar {
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+
+  }
+
+  .heroSection {
+    height: 90vh;
+  }
+
+  .heroSectionContent {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .heroSectionContent img {
+    display: none;
+  }
+
+  .heroTitle {
+    font-size: 1.8rem;
+
+  }
+
+  .heroSubtitle {
+    font-size: 1rem;
+
+  }
+
+}
