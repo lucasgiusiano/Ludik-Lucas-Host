@@ -425,8 +425,14 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 
+// Aplica migraciones pendientes al arrancar (crea la BD si no existe)
+using (var scopeMigraciones = app.Services.CreateScope())
+{
+	scopeMigraciones.ServiceProvider.GetRequiredService<ContextoDb>().Database.Migrate();
+}
+
 // --- INICIO: Lógica para precargar archivos 
-if (app.Environment.IsDevelopment())
+if (app.Environment.IsDevelopment() || builder.Configuration.GetValue<bool>("SeedArchivos"))
 {
 	using (var scope = app.Services.CreateScope())
 	{

@@ -1,0 +1,60 @@
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    restart: unless-stopped
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_PID: "Express"
+      MSSQL_SA_PASSWORD: ${MSSQL_SA_PASSWORD}
+    volumes:
+      - sqldata:/var/opt/mssql
+    healthcheck:
+      test: ["CMD-SHELL", "/opt/mssql-tools18/bin/sqlcmd -C -S localhost -U sa -P \"$$MSSQL_SA_PASSWORD\" -Q 'SELECT 1' || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 30s
+
+  azurite:
+    image: mcr.microsoft.com/azure-storage/azurite
+    restart: unless-stopped
+    command: azurite-blob --blobHost 0.0.0.0 --location /data --skipApiVersionCheck --disableProductStyleUrl --loose
+    environment:
+      AZURITE_ACCOUNTS: ${BLOB_ACCOUNT}:${BLOB_KEY}
+    volumes:
+      - blobdata:/data
+    expose:
+      - "10000"
+
+  api:
+    build:
+      context: ./LudikAPI
+    restart: unless-stopped
+    depends_on:
+      sqlserver:
+        condition: service_healthy
+      azurite:
+        condition: service_started
+    environment:
+      ASPNETCORE_ENVIRONMENT: Production
+      ASPNETCORE_URLS: http://+:8080
+      ConnectionStrings__DefaultConnection: Server=sqlserver;Database=ludik;User Id=sa;Password=${MSSQL_SA_PASSWORD};TrustServerCertificate=True;Encrypt=False
+      ConnectionStrings__AzureStorage: DefaultEndpointsProtocol=https;AccountName=${BLOB_ACCOUNT};AccountKey=${BLOB_KEY};BlobEndpoint=${BLOB_PUBLIC_URL}/${BLOB_ACCOUNT};
+      JwtSettings__Key: ${JWT_KEY}
+      StorageContainerName: imagenes-perfiles-prod
+      SeedArchivos: "true"
+    expose:
+      - "8080"
+
+  client:
+    build:
+      context: ./ludikclient
+      args:
+        REACT_APP_API_URL: ${REACT_APP_API_URL}
+    restart: unless-stopped
+    expose:
+      - "80"
+
+volumes:
+  sqldata:
+  blobdata:
